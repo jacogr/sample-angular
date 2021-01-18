@@ -57,6 +57,16 @@
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
+// Add global to window, assigning the value of window itself.
+(window as any).global = window;
+
+// Buffer
+global.Buffer = global.Buffer || require('buffer').Buffer;
+
+// process
+(window as any).process = {
+  version: ''
+};
 
 /***************************************************************************************************
  * APPLICATION IMPORTS
